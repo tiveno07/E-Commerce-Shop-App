@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use("/", express.static(path.join(__dirname, "./uploads")));
 
 app.use("/", (req, res) => {
-  res.send("Hello World Tiveno!");
+  res.status(200).json("Hello World Tiveno!");
 });
 
 //Configuration
