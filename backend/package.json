@@ -31,7 +31,5 @@
     "server": "^1.0.39",
     "sharp": "^0.33.3",
     "stripe": "^14.20.0"
-  },
-  "keywords": [],
-  "description": ""
+  }
 }
