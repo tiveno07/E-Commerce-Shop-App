@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use("/", express.static(path.join(__dirname, "./uploads")));
 
 app.use("/", (req, res) => {
-  res.status(200).json("Hello World Tiveno!");
+  res.send("Hello World Tiveno!");
 });
 
 //Configuration
@@ -37,13 +37,6 @@ const payment = require("./controller/payment");
 const order = require("./controller/order");
 const conversation = require("./controller/conversation");
 const message = require("./controller/messages");
-
-//Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({
-    path: "config/.env",
-  });
-}
 
 app.use("/api/v2/user", user);
 app.use("/api/v2/shop", shop);
