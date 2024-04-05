@@ -1,0 +1,9 @@
+# dependency 
+backend/config.env
+frontend/node-modules 
+backend/node-modules
+socket/node-modules
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
