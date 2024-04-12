@@ -6,20 +6,20 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
+app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
   })
 ); //making it a Global use
-app.use(express.json());
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use("/", express.static(path.join(__dirname, "./uploads")));
-
 app.use("/", (req, res) => {
   res.send("Hello World Tiveno!");
 });
+
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 //Configuration
 if (process.env.NODE_ENV !== "PRODUCTION") {
