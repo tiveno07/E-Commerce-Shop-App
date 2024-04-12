@@ -1,3 +1,4 @@
+require("dotenv").config();
 const app = require("./app");
 const connectDataBase = require("./db/Database");
 const cloudinary = require("cloudinary");
