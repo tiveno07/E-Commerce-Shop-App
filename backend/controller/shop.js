@@ -52,7 +52,7 @@ router.post("/create-shop", upload.array("file"), async (req, res, next) => {
     console.log(seller, "fdgf");
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `https://e-commerce-shop-app-9x4p.vercel.app/seller/activation/${activationToken}`;
+    const activationUrl = `https://e-commerce-shop-app-i2k5.vercel.app/seller/activation/${activationToken}`;
 
     try {
       await sendMail({
