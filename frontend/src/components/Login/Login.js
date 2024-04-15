@@ -29,7 +29,7 @@ export const Login = () => {
         window.location.reload(true);
       })
       .catch((error) => {
-        toast.error(error.response.data);
+        toast.error(error.response.data.message);
         // toast.error("Error: " + error);
       });
   };
