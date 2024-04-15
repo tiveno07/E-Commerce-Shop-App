@@ -6,14 +6,14 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
-app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
     origin: "https://e-commerce-shop-app-i2k5.vercel.app",
     credentials: true,
   })
 ); //making it a Global use
+app.use(express.json());
+app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "./uploads")));
 app.use("/test", (req, res) => {
   res.send("Hello World Tiveno!");
