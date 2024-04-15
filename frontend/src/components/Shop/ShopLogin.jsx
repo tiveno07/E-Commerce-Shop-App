@@ -30,6 +30,7 @@ export const ShopLogin = () => {
       })
       .catch((err) => {
         toast.error(err.response.data.message);
+        toast.error("Error: " + err);
       });
   };
 
