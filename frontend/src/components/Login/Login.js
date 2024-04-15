@@ -28,9 +28,9 @@ export const Login = () => {
         navigate("/");
         window.location.reload(true);
       })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-        toast.error("Error: " + err);
+      .catch((error) => {
+        toast.error(error.response.data);
+        // toast.error("Error: " + error);
       });
   };
 
