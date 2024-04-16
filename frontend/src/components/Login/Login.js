@@ -24,6 +24,7 @@ export const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
+        console.log(res.data);
         toast.success("Login Success!");
         navigate("/");
         window.location.reload(true);
