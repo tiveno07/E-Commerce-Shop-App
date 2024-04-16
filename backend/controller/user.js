@@ -61,11 +61,11 @@ router.post("/create-user", upload.array("file"), async (req, res, next) => {
         message: `please check your email:- ${user.email} to activate your account`,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   } catch (error) {
-    next(new ErrorHandler(error.message, 400));
+    next(new ErrorHandler(error.response.data, 500));
     return;
   }
 });
@@ -107,7 +107,7 @@ router.post(
         sendToken(user, 201, res);
       }
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -137,7 +137,7 @@ router.put(
 
       return res.json(200).json({ success: true, deleteImage });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -158,7 +158,7 @@ router.delete(
 
       res.status(200).json({ success: true, user });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -193,7 +193,7 @@ router.put(
         user,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -243,7 +243,7 @@ router.get(
         user,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -280,7 +280,7 @@ router.put(
 
       res.status(200).json({ success: true, user });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -309,7 +309,7 @@ router.put(
         .status(200)
         .json({ success: true, user, message: "password updated" });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -327,7 +327,7 @@ router.get(
         user,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -346,7 +346,7 @@ router.get(
 
       res.status(201).json({ success: true, message: "Log Out Successful!" });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );

@@ -116,7 +116,7 @@ router.post(
         sendShopToken(seller, 201, res);
       }
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -145,7 +145,7 @@ router.post(
       }
       sendShopToken(user, 201, res);
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -167,7 +167,7 @@ router.get(
         seller,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
@@ -186,7 +186,7 @@ router.get(
 
       res.status(201).json({ success: true, message: "Log Out Successful!" });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -201,7 +201,7 @@ router.get(
         shop,
       });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -228,7 +228,7 @@ router.put(
         user,
       });
     } catch (error) {
-      return next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
@@ -259,7 +259,7 @@ router.put(
         shop,
       });
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
     }
   })
 );
