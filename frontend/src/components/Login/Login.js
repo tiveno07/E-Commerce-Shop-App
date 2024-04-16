@@ -30,7 +30,7 @@ export const Login = () => {
       })
       .catch((error) => {
         // toast.error(error.response.data.message);
-        toast.error("Error: " + error);
+        toast.error(error.response.data);
       });
   };
 
