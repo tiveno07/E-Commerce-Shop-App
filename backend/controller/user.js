@@ -221,7 +221,7 @@ router.post(
       }
       sendToken(user, 201, res);
     } catch (error) {
-      next(new ErrorHandler(error.message, 500));
+      next(new ErrorHandler(error.response.data, 500));
       return;
     }
   })
